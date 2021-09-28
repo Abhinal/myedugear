@@ -1,0 +1,28 @@
+body {
+    background: #C04848;
+    background: -webkit-linear-gradient(to right, #480048, #C04848);
+    background: linear-gradient(to right, #480048, #C04848);
+    height: 100vh;
+    font-family: 'Urbanist', sans-serif;
+}
+
+.card {
+    max-width: 400px;
+}
+
+.login,
+.signup {
+    border-radius: 0;
+}
+
+.submit {
+    border-radius: 0;
+    background: #C04848;
+    background: -webkit-linear-gradient(to left, #480048, #C04848);
+    background: linear-gradient(to left, #480048, #C04848);
+}
+
+.submit:hover {
+    background: -webkit-linear-gradient(to right, #480048, #C04848);
+    background: linear-gradient(to right, #480048, #C04848);
+}
