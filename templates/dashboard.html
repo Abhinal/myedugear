@@ -1,0 +1,168 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>My Edu-Gear</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<style>
+    .ls-1 {
+        letter-spacing: 1px;
+    }
+</style>
+
+<script>
+    //line
+    var ctxL = document.getElementById("lineChart").getContext('2d');
+    var myLineChart = new Chart(ctxL, {
+        type: 'line',
+        data: {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: "My First dataset",
+                data: [65, 59, 80, 81, 56, 55, 40],
+                backgroundColor: [
+                    'rgba(105, 0, 132, .2)',
+                ],
+                borderColor: [
+                    'rgba(200, 99, 132, .7)',
+                ],
+                borderWidth: 2
+            },
+            {
+                label: "My Second dataset",
+                data: [28, 48, 40, 19, 86, 27, 90],
+                backgroundColor: [
+                    'rgba(0, 137, 132, .2)',
+                ],
+                borderColor: [
+                    'rgba(0, 10, 130, .7)',
+                ],
+                borderWidth: 2
+            }
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    });
+</script>
+
+
+<body>
+    <nav class="navbar navbar-expand navbar-light bg-danger text-white sticky-top">
+        <a class="navbar-brand text-white ml-5" href="#">My Edu-Gear</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ml-auto align-items-baseline">
+                <li class="nav-item">
+                    <a class="nav-link bg-danger text-white rounded mr-5" href="#">Logout <span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid d-flex justify-content-center align-items-center ml-2:20px bg-danger" id="intro">
+        <img src="../static/img/profile-logo.png" class="p-2 rounded-circle">
+
+        <div class="p-2">
+            <h1 class="font-weight-bold display-4 text-dark">Anamika Jha.<br>The World Changer</h1>
+            <h3 class="font-weight-bold display-5 ls-1 text-white">Student at My Edu-Gear.</h3>
+        </div>
+    </div>
+
+    <hr width="80%" class="bg-danger">
+
+    <div class="container">
+        <h1>My Current Courses</h1>
+        <table class="table" style="border: red 1px solid;">
+            <thead class="bg-danger text-white">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Course</th>
+                    <th scope="col">Progress</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>20/09/2021</td>
+                    <td>Crack IIT Mains</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>23/09/2021</td>
+                    <td>Crack IIT Advance</td>
+                    <td>10%</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>26/09/2021</td>
+                    <td>Crack WBJEE</td>
+                    <td>5%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container my-5">
+        <h1>Performance</h1>
+        <!-- <iframe width="100%" height="100%" src="https://mdbootstrap.com/api/snippets/embed/3334063/fullscreen"
+            frameborder="0"></iframe> -->
+        <canvas id="myChart" style="border: 1px red solid;" class="p-3"></canvas>
+    </div>
+
+    <script>
+        var xValues = ["Test 1", "Test 2", "Test 3", "Test 4", "Test 5"];
+
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    label: "My Marks",
+                    data: [150, 114, 190, 247, 200],
+                    backgroundColor: [
+                        'rgba(0, 137, 132, .2)',
+                    ],
+                    borderColor: [
+                        'rgba(0, 10, 130, .7)',
+                    ],
+                    borderWidth: 2
+                }, {
+                    label: "Average Marks", 
+                    data: [114, 150, 124, 220, 280],
+                    backgroundColor: [
+                        'rgba(105, 0, 132, .2)',
+                    ],
+                    borderColor: [
+                        'rgba(200, 99, 132, .7)',
+                    ],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
